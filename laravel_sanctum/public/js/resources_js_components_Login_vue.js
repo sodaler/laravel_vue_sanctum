@@ -27,11 +27,7 @@ __webpack_require__.r(__webpack_exports__);
         axios.post('/login', {
           email: _this.email,
           password: _this.password
-        }).then(function (res) {
-          console.log(res);
-        })["catch"](function (err) {
-          console.log(err.response);
-        });
+        }).then(function (res) {})["catch"](function (err) {});
       });
     }
   }
@@ -101,7 +97,8 @@ var render = function render() {
   }), _vm._v(" "), _c("input", {
     staticClass: "btn btn-primary",
     attrs: {
-      type: "submit"
+      type: "submit",
+      value: "register"
     },
     on: {
       click: function click($event) {
