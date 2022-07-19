@@ -27,7 +27,13 @@ __webpack_require__.r(__webpack_exports__);
         axios.post('/login', {
           email: _this.email,
           password: _this.password
-        }).then(function (res) {})["catch"](function (err) {});
+        }).then(function (res) {
+          localStorage.setItem('x_xsrf_token', res.config.headers['X-XSRF-TOKEN']);
+
+          _this.$router.push({
+            name: 'user.personal'
+          });
+        })["catch"](function (err) {});
       });
     }
   }
@@ -98,7 +104,7 @@ var render = function render() {
     staticClass: "btn btn-primary",
     attrs: {
       type: "submit",
-      value: "register"
+      value: "login"
     },
     on: {
       click: function click($event) {
